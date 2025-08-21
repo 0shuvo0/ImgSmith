@@ -1,0 +1,72 @@
+{
+  "name": "imgsmith",
+  "displayName": "ImgSmith",
+  "icon": "images/icon.png",
+  "description": "Quickly convert and resize images inside VS Code (supports PNG, JPG, WebP, SVG, and more).",
+  "version": "0.0.1",
+  "publisher": "0shuvo0",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "imageConverter.convertTo.webp", "title": "Convert Image: to WebP" },
+      { "command": "imageConverter.convertTo.jpg",  "title": "Convert Image: to JPG" },
+      { "command": "imageConverter.convertTo.png",  "title": "Convert Image: to PNG" },
+      { "command": "imageConverter.convertAndResize","title": "Convert & Resize Image(s)..." }
+    ],
+    "submenus": [
+      { "id": "imageConverter.submenu", "label": "Convert Image" }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "imageConverter.submenu",
+          "group": "1_conversion@1",
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp|gif|tiff|bmp|avif|heic|heif|svg)$/i"
+        },
+        {
+          "command": "imageConverter.convertAndResize",
+          "group": "1_conversion@2",
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp|gif|tiff|bmp|avif|heic|heif|svg)$/i"
+        }
+      ],
+      "imageConverter.submenu": [
+        { "command": "imageConverter.convertTo.webp", "group": "a@1" },
+        { "command": "imageConverter.convertTo.jpg",  "group": "a@2" },
+        { "command": "imageConverter.convertTo.png",  "group": "a@3" }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.103.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.32.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "sharp": "^0.34.3"
+  }
+}
