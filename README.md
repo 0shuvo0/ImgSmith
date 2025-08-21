@@ -62,9 +62,3 @@ Found a bug or want a feature?
 ## 📜 License
 
 MIT License © 2025 – ImgSmith
-
----
-
-👉 I’ve left the GitHub/marketplace link placeholders out since I’m not sure where you plan to publish yet.
-
-Do you want me to also create a **badges section** (e.g., version, downloads, license, marketplace link) so it looks even more professional, like other popular VS Code extensions?
