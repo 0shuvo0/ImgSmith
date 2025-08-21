@@ -3,10 +3,14 @@
   "displayName": "ImgSmith",
   "icon": "images/icon.png",
   "description": "Quickly convert and resize images inside VS Code (supports PNG, JPG, WebP, SVG, and more).",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "publisher": "0shuvo0",
   "engines": {
     "vscode": "^1.103.0"
+  },
+  "galleryBanner.color": {
+    "color": "#007acc",
+    "theme": "dark"
   },
   "repository": {
     "type": "git",
