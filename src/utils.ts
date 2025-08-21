@@ -59,7 +59,7 @@ export async function convertSingleFile(
     case "jpg":
       // If input is SVG, flatten with white background
       pipeline = pipeline.jpeg({ quality: q });
-      if (isSvgInput) pipeline = pipeline.flatten({ background: { r: 255, g: 255, b: 255 } });
+      if (isSvgInput) {pipeline = pipeline.flatten({ background: { r: 255, g: 255, b: 255 } });}
       break;
     case "png":
       pipeline = pipeline.png({ quality: q });
@@ -91,7 +91,7 @@ export function pickSelectedResources(arg: any): vscode.Uri[] {
 
   const merged = new Map<string, vscode.Uri>();
   [...fromArg, ...(multi || []), ...selected].forEach(u => {
-    if (u && isImageFile(u)) merged.set(u.fsPath, u);
+    if (u && isImageFile(u)) {merged.set(u.fsPath, u);}
   });
   return [...merged.values()];
 }
