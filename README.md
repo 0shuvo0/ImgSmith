@@ -21,7 +21,7 @@ Perfect for developers, designers, and content creators who want to stay focused
 
 Here’s ImgSmith in action:
 
-![Demo](images/demo.gif)
+![Demo](https://raw.githubusercontent.com/0shuvo0/ImgSmith/main/images/demo.gif)
 
 ---
 

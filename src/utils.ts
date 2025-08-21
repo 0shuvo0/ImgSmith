@@ -6,8 +6,9 @@ import sharp from "sharp";
 export type TargetFormat = "webp" | "jpg" | "png";
 
 const READABLE_FORMATS = [
-  "png","jpg","jpeg","webp","gif","tiff","bmp","avif","heic","heif","svg"
+  "png","jpg","jpeg","webp","gif","tiff","bmp","avif","heic","heif","svg","dng"
 ];
+
 
 export function isImageFile(uri: vscode.Uri) {
   const ext = path.extname(uri.fsPath).slice(1).toLowerCase();

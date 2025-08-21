@@ -6,8 +6,9 @@ import sharp from "sharp";
 type TargetFormat = "webp" | "jpg" | "png";
 
 const INPUT_FORMATS = [
-  "png", "jpg", "jpeg", "webp", "gif", "tiff", "bmp", "avif", "heic", "heif", "svg"
+  "png", "jpg", "jpeg", "webp", "gif", "tiff", "bmp", "avif", "heic", "heif", "svg", "dng"
 ];
+
 
 let lastSelection: vscode.Uri[] = [];
 

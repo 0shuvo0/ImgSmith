@@ -8,6 +8,10 @@
   "engines": {
     "vscode": "^1.103.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0shuvo0/ImgSmith.git"
+  },
   "categories": [
     "Other"
   ],
@@ -30,12 +34,12 @@
         {
           "submenu": "imageConverter.submenu",
           "group": "1_conversion@1",
-          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp|gif|tiff|bmp|avif|heic|heif|svg)$/i"
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp|gif|tiff|bmp|avif|heic|heif|svg|dng)$/i"
         },
         {
           "command": "imageConverter.convertAndResize",
           "group": "1_conversion@2",
-          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp|gif|tiff|bmp|avif|heic|heif|svg)$/i"
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp|gif|tiff|bmp|avif|heic|heif|svg|dng)$/i"
         }
       ],
       "imageConverter.submenu": [
