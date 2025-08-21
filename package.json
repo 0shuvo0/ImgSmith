@@ -2,8 +2,8 @@
   "name": "imgsmith",
   "displayName": "ImgSmith",
   "icon": "images/icon.png",
-  "description": "Quickly convert and resize images inside VS Code (supports PNG, JPG, WebP, SVG, and more).",
-  "version": "1.0.2",
+  "description": "Quickly convert, resize images, and generate favicon sets inside VS Code (supports PNG, JPG, WebP, SVG, and more).",
+  "version": "1.1.0",
   "publisher": "0shuvo0",
   "engines": {
     "vscode": "^1.103.0"
@@ -25,13 +25,32 @@
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-      { "command": "imageConverter.convertTo.webp", "title": "Convert Image: to WebP" },
-      { "command": "imageConverter.convertTo.jpg",  "title": "Convert Image: to JPG" },
-      { "command": "imageConverter.convertTo.png",  "title": "Convert Image: to PNG" },
-      { "command": "imageConverter.convertAndResize","title": "Convert & Resize Image(s)..." }
+      {
+        "command": "imageConverter.convertTo.webp",
+        "title": "Convert Image: to WebP"
+      },
+      {
+        "command": "imageConverter.convertTo.jpg",
+        "title": "Convert Image: to JPG"
+      },
+      {
+        "command": "imageConverter.convertTo.png",
+        "title": "Convert Image: to PNG"
+      },
+      {
+        "command": "imageConverter.convertAndResize",
+        "title": "Convert & Resize Image(s)..."
+      },
+      {
+        "command": "imageConverter.generateFavicon",
+        "title": "Generate Favicon Set"
+      }
     ],
     "submenus": [
-      { "id": "imageConverter.submenu", "label": "Convert Image" }
+      {
+        "id": "imageConverter.submenu",
+        "label": "Convert Image"
+      }
     ],
     "menus": {
       "explorer/context": [
@@ -44,12 +63,26 @@
           "command": "imageConverter.convertAndResize",
           "group": "1_conversion@2",
           "when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp|gif|tiff|bmp|avif|heic|heif|svg|dng)$/i"
+        },
+        {
+          "command": "imageConverter.generateFavicon",
+          "group": "1_conversion@3",
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|webp|gif|tiff|bmp|avif|heic|heif|svg|dng)$/i"
         }
       ],
       "imageConverter.submenu": [
-        { "command": "imageConverter.convertTo.webp", "group": "a@1" },
-        { "command": "imageConverter.convertTo.jpg",  "group": "a@2" },
-        { "command": "imageConverter.convertTo.png",  "group": "a@3" }
+        {
+          "command": "imageConverter.convertTo.webp",
+          "group": "a@1"
+        },
+        {
+          "command": "imageConverter.convertTo.jpg",
+          "group": "a@2"
+        },
+        {
+          "command": "imageConverter.convertTo.png",
+          "group": "a@3"
+        }
       ]
     }
   },
